@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="src/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="src/media.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Montserrat+Subrayada&display=swap" rel="stylesheet">   
+    <title>Time Lord App</title>
+</head>
+<body>
+    <div class="tardis">
+        <picture class="tardis-picture">
+            <source	media="(max-width:1599px)" srcset="img/tardis-1399.jpg">
+            <img src="img/tardis.jpg">
+        </picture>
+    </div>
+    <div class="container">
+        <h1 class="main-header">
+            Time Lord App
+        </h1>
+        <form method="get" onsubmit="return false;">
+            <div class="data-entry">
+                <div class="first-date">
+                        <div class="first-date-inner">
+                        <p class="first-date__text important-text">
+                            First date
+                        </p>
+                        <input type="date" id="first-date" name="first-date" class="first-date__input date-input" required>
+                        </input>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="days-options">
+                        <p class="days-options__before-select normal-text">
+                            let's count
+                        </p>
+                        <select name="days" id="days-select" class="option-select">
+                            <option value="allDays">all days</option>
+                            <option value="workdays">workdays</option>
+                            <option value="weekends">weekends</option>
+                        </select>
+                        <p class="days-options__after-select normal-text">
+                            between
+                        </p>
+                    </div>
+                    <div class="units-options">
+                        <p class="days-options__before-select normal-text">
+                            in
+                        </p>
+                        <select name="units" id="units" class="option-select">
+                            <option value="days">days</option>
+                            <option value="hours">hours</option>
+                            <option value="minutes">minutes</option>
+                            <option value="seconds">seconds</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="second-date">
+                    <div class="second-date-inner">
+                        <p class="second-date__text important-text">
+                            Second date
+                        </p>
+                        <input type="date" id="second-date" name="second-date" 
+                        class="second-date__input date-input" required>
+                        </input>
+                        <p class="mini-text">or just add</p>
+                        <div class="presets">
+                            <button class="button preset-button" id="week">a week</button>
+                            <button class="button preset-button" id="month">a month</button>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="start">
+                <p class="start__text important-text">
+                    START =>
+                </p>
+                <button type="submit" class="button pic-button start-button" id="start-button" disabled>
+                    <img src="img/button.png" alt="press to count">
+                </button>
+            </div>
+        </form>
+        <div class="results">
+            <div class="last-result">
+                <h2 class="results-header">Your result is...</h2>
+                <p class="last-result important-text"><output></output>
+                </p>
+            </div>
+            <div class="previous-results">
+                
+                <p class="normal-text previous-results__text">Previous results</p>
+                <div class="previous-results__table">
+                    <table class="result-table">
+                        <thead>
+                        <tr>
+                            <th>First date</th>
+                            <th>Second date</th>
+                            <th>Result</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+</html>
