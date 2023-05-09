@@ -3,23 +3,14 @@
 //DOM
 const firstDate = document.getElementById("first-date");
 const secondDate = document.getElementById("second-date");
-// let firstDate = document.querySelector(".start-date");
-// let secondDate = document.querySelector(".end-date");
 const addWeekButton = document.getElementById("week");
 const addMonthButton = document.getElementById("month");
-// let week = document.querySelector(".week");
-// let month = document.querySelector(".month");
 const typeOfDays = document.getElementById("days-select");
-// let typeDate = document.querySelector(".type_date");
 const countingUnits = document.getElementById("units");
 const startButton = document.getElementById("start-button");
-// let buttonCount = document.querySelector(".button-count");
 let output = document.querySelector("output");
-// let output = document.querySelector("output");
 let resultTable = document.querySelector(".result-table");
 let rows = resultTable.rows;
-// let resultTable = document.querySelector(".result-table");
-// let rows = resultTable.rows;
 
 //TIME UNITS
 const MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000;
