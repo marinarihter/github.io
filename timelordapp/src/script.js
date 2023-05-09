@@ -1,4 +1,4 @@
-
+"use strict";
 
 //DOM
 const firstDate = document.getElementById("first-date");
