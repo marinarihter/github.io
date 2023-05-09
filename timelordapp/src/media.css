@@ -1,0 +1,44 @@
+@media screen and (max-width: 1599px) {
+  body {
+    font-size: 12px;
+  }
+  .tardis {
+    bottom: 5%;
+    right: 50px;
+}
+}
+@media screen and (max-width: 1199px) {
+  body {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1015px) {
+.data-entry {
+  display: block;
+}
+.first-date {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.second-date {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.second-date-inner {
+  margin-left: 0;
+}
+.options {
+  width: 100%;
+}
+}
+
+@media screen and (max-width: 599px) {
+.tardis{
+  display: none;
+}
+.result-table {
+  width: 100%;
+}
+}
