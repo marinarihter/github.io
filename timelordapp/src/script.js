@@ -1,5 +1,3 @@
-"use strict";
-
 //DOM
 const firstDate = document.getElementById("first-date");
 const secondDate = document.getElementById("second-date");
@@ -23,40 +21,40 @@ const SECONDS_IN_DAY = 24 * 60 * 60;
 
 //DATES ENTRY
 //fisrt date
-firstDate.onchange = function () {
+firstDate.addEventListener ("change", function addFirstDate () {
     if (firstDate.value === "") {
       startButton.disabled = true;
     } else {
       secondDate.setAttribute("min", this.value);
     }
-};
+});
 //second date
-secondDate.onchange = function () {
+secondDate.addEventListener ("change", function addSecondDate () {
     if (secondDate.value === "") {
       startButton.disabled = true;
     } else {
       startButton.disabled = false;
     }
     firstDate.setAttribute("max", this.value);
-};
+});
 
 //PRESETS
 //week
-addWeekButton.onclick = function () {
+addWeekButton.addEventListener ("click", function addWeek () {
     let receivedDate = new Date(firstDate.value);
     let datePlusWeek = new Date(receivedDate);
     datePlusWeek.setDate(receivedDate.getDate() + 7);
     secondDate.valueAsDate = datePlusWeek;
     startButton.disabled = false;
-};
+});
 //month
-addMonthButton.onclick = function () {
+addMonthButton.addEventListener ("click", function addMonth () {
     let receivedDate = new Date(firstDate.value);
     let datePlusMonth = new Date(receivedDate);
     datePlusMonth.setMonth(receivedDate.getMonth() + 1);
     secondDate.valueAsDate = datePlusMonth;
     startButton.disabled = false;
-};
+});
 
 //TRANSFORMATIONS
 
@@ -103,11 +101,10 @@ function transformIntoTimeUnitsSpecificDays (calcResult, countingUnits) {
 
 //all days - difference
 function calcAllDaysBetweenDates (start, end, countingUnits) {
-    let daysInPeriod;
     let startDate = new Date (start);
     let endDate = new Date (end);
     let calcResult = Date.parse(endDate) - Date.parse(startDate);
-    return `${daysInPeriod = Math.round(transformIntoTimeUnitsAllDays(calcResult, countingUnits))} ${countingUnits}`;
+    return `${Math.round(transformIntoTimeUnitsAllDays(calcResult, countingUnits))} ${countingUnits}`;
 }
 
 //weekend detection
@@ -119,7 +116,6 @@ function isWeekend(date) {
 
 //weekends - difference
 function calcWeekends (start, end, countingUnits) {
-    let weekendsInPeriod;
     let calcResult = 0;
     day = start.getDay();
     while (start <= end) {
@@ -128,12 +124,11 @@ function calcWeekends (start, end, countingUnits) {
         }
         start.setDate(start.getDate()+1)
     }
-     return `${weekendsInPeriod = transformIntoTimeUnitsSpecificDays (calcResult, countingUnits)} ${countingUnits}`
+     return `${transformIntoTimeUnitsSpecificDays (calcResult, countingUnits)} ${countingUnits}`
 }
 
 // working dates - difference
 function calcWorkdays (start, end, countingUnits) {
-    let workdaysInPeriod;
     let calcResult = 0;
     day = start.getDay();
     while (start <= end) {
@@ -142,7 +137,7 @@ function calcWorkdays (start, end, countingUnits) {
         }
         start.setDate(start.getDate()+1)
     }
-    return `${workdaysInPeriod = transformIntoTimeUnitsSpecificDays (calcResult, countingUnits)} ${countingUnits}`
+    return `${transformIntoTimeUnitsSpecificDays (calcResult, countingUnits)} ${countingUnits}`
 }
 
 
